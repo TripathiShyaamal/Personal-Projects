@@ -50,6 +50,7 @@ public class Cal_Client
         } 
 
     }while(true);
+    System.out.println("The client has terminated.");
 }
 
 }
