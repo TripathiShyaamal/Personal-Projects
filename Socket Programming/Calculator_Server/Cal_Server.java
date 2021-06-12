@@ -7,6 +7,9 @@ public class Cal_Server
 {
     public static void main(String[] args) throws Exception
     {
+        System.out.println();
+        System.out.println("The Server has started");
+        System.out.println();
         ServerSocket ss=new ServerSocket(9806);
         System.out.println("Waiting for the client.....");
         System.out.println();
@@ -23,9 +26,11 @@ public class Cal_Server
             int num1=Integer.parseInt(str[1]);
             int num2=Integer.parseInt(str[2]);
             String result="";
+            int flag=0;
 
             switch(option)
             {
+                
                 case 1: 
                 result="Addition is:"+(num1+num2);
                 break;
@@ -43,13 +48,20 @@ public class Cal_Server
                 break;
 
                 case 5: 
-                System.exit(0);
+                flag=1;
+                break;
 
                 default: 
                 break;
             }
+            if(flag==1)
+            {
+                break;
+            }
             out.println(result);
         }
+        System.out.println();
+        System.out.println("The Server has terminated");
     }
     
 }
